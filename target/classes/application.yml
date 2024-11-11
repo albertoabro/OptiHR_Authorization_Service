@@ -1,0 +1,27 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: authorization-service
+    #hikari:
+    #  pool-name:
+    #  maximum-pool-size:
+    #kafka:
+    #  bootstrap-servers:
+    #  consumer:
+    #    group-id:
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+
