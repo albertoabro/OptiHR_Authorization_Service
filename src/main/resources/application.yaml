@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: authorization-service
+
+  config:
+    import: optional:configserver:http://localhost:8081
+  profiles:
+    active: dev
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    preferIpAddress: true
+
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8065/eureka/
+info:
+  app:
+    name: Authorization Microservice
+    description: Application to authorize access
+    version: 1.0.0
+
+endpoint:
+  shutdown:
+    enable: false
+
+management:
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    shutdown:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"

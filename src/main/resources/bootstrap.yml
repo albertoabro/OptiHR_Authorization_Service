@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: authorization-service
-  profiles:
-    active: dev
-  config:
-    import: optional:config-server:http//localhost:8081
-
